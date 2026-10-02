@@ -1,0 +1,814 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background-color:black;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+nav{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 50px;
+
+    background-color:black;
+}
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:red;
+}
+.logo span{
+    color:white;
+    font-size:24px;
+}
+nav ul{
+    display:flex;
+    align-items: center;
+    list-style:none;
+    gap:20px;
+}
+nav ul li{
+    cursor:pointer;
+}
+
+
+/* hero */
+.hero{
+    height:90vh;
+
+    background-image:url("assets/banner.jpeg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+.overlay{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.7);
+}
+.hero-content{
+    position:relative;
+
+    z-index:1;
+
+    text-align:center;
+
+    padding:20px;
+}
+.hero-content h1{
+    font-size:4rem;
+
+    margin-bottom:20px;
+}
+.hero-content p{
+    font-size:1.3rem;
+
+    margin-bottom:30px;
+}
+.search-box{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+.search-box input{
+    width:350px;
+
+    padding:12px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:5px;
+
+    font-size:16px;
+}
+.search-box button{
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:5px;
+
+    background:red;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+.search-box button:hover{
+    background:#b30000;
+}
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .search-box input{
+        width:250px;
+    }
+
+}
+
+
+
+
+
+/* footer */
+
+footer{
+
+    background:linear-gradient(
+        to top,
+        #000,
+        #111
+    );
+
+    padding:20px 20px;
+
+    text-align:center;
+
+    margin-top:60px;
+
+}
+
+
+footer h3{
+
+    color:#e50914;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+
+footer p{
+
+    color:#b3b3b3;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+#movieDetails{
+
+    padding:50px;
+
+}
+
+
+.details-card{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    background:#07152c;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+
+.movie-poster{
+
+    width:300px;
+
+    border-radius:10px;
+
+}
+
+
+.movie-info{
+
+    flex:1;
+
+}
+
+
+.movie-info h1{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+}
+
+
+.year{
+
+    color:lightgray;
+
+    margin-bottom:25px;
+
+}
+
+
+.movie-info p{
+
+    line-height:2;
+
+}
+
+
+.movie-info h2{
+
+    margin-top:35px;
+
+    margin-bottom:20px;
+
+}
+
+
+.ratings{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+
+}
+
+
+.ratings span{
+
+    background:#2563eb;
+
+    padding:10px 20px;
+
+    border-radius:25px;
+
+}
+
+
+.extra-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:40px;
+
+}
+
+
+@media(max-width:900px){
+
+    .details-card{
+
+        flex-direction:column;
+
+    }
+
+    .movie-poster{
+
+        width:100%;
+
+    }
+
+    .extra-info{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+}
+
+
+
+
+
+/* this is for intro animation */
+/* =========================
+   PROFESSIONAL INTRO
+========================= */
+
+#intro-screen{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    z-index:99999;
+
+    animation:hideIntro 3.5s forwards;
+}
+
+
+/* LOGO SECTION */
+
+.logo-wrapper{
+    text-align:center;
+    z-index:2;
+}
+
+
+.intro-logo{
+
+    font-size:220px;
+    font-weight:900;
+
+    color:#e50914;
+
+    font-family:Arial, sans-serif;
+
+    text-shadow:
+        0 0 10px #ff0000,
+        0 0 30px #ff0000,
+        0 0 60px #ff0000;
+
+    opacity:0;
+
+    animation:logoAnimation 2.5s forwards;
+}
+
+
+.intro-text{
+
+    font-size:30px;
+
+    letter-spacing:10px;
+
+    margin-top:-30px;
+
+    color:white;
+
+    opacity:0;
+
+    animation:textAppear 1s forwards;
+
+    animation-delay:1.8s;
+}
+
+
+/* LIGHT BEAMS */
+
+.light{
+
+    position:absolute;
+
+    width:200px;
+    height:100vh;
+
+    background:linear-gradient(
+        transparent,
+        rgba(103, 51, 51, 0.6),
+        transparent
+    );
+
+    filter:blur(80px);
+
+    animation:moveLight 2s infinite alternate;
+}
+
+
+.left-light{
+
+    left:40%;
+}
+
+
+.right-light{
+
+    right:40%;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes logoAnimation{
+
+    0%{
+
+        transform:
+        scale(0.3)
+        rotateY(90deg);
+
+        opacity:0;
+    }
+
+    40%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        scale(1)
+        rotateY(0deg);
+
+        opacity:1;
+    }
+
+}
+
+
+@keyframes textAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+@keyframes moveLight{
+
+    from{
+
+        transform:
+        translateX(-30px);
+
+    }
+
+    to{
+
+        transform:
+        translateX(30px);
+
+    }
+
+}
+
+
+@keyframes hideIntro{
+
+    85%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        visibility:hidden;
+
+    }
+
+}
+
+.tap-text{
+    margin-top:20px;
+    color:#ccc;
+    font-size:18px;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0.5;
+    }
+}
+
+
+
+
+
+/* favorite */
+/* FAVORITES PAGE */
+
+.fav-title{
+
+    text-align:center;
+
+    margin:40px 0;
+
+    font-size:40px;
+
+}
+
+
+.favorites-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+padding:40px;
+
+
+}
+
+
+.favorite-card{
+
+    background:#111;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    transition:0.3s;
+
+}
+
+
+.favorite-card:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+.favorite-card img{
+
+    width:100%;
+
+    height:400px;
+
+    object-fit:cover;
+
+}
+
+
+.favorite-card h3{
+
+    padding:15px;
+
+}
+
+
+.favorite-card p{
+
+    margin-bottom:15px;
+
+    color:lightgray;
+
+}
+
+
+/* ADD TO FAVORITES BUTTON */
+
+.fav-btn{
+
+    margin:20px 0;
+
+    padding:12px 25px;
+
+    border:none;
+
+    background:red;
+
+    color:white;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+
+.fav-btn:hover{
+
+    background:#c00000;
+
+}
+
+
+
+
+.remove-btn{
+
+margin:15px;
+
+padding:10px 20px;
+
+border:none;
+
+border-radius:25px;
+
+background:#dc2626;
+
+color:white;
+
+cursor:pointer;
+
+font-size:14px;
+
+transition:0.3s;
+
+
+}
+
+.remove-btn:hover{
+
+background:#991b1b;
+
+
+}
+
+
+
+/* Favorites Container */
+
+.favorites-grid{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+
+    padding:40px;
+
+}
+
+
+/* Same size for every movie card */
+
+.movie-card{
+
+    width:250px;
+
+    height:520px;
+
+    background:#111;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    transition:0.3s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
+
+
+.movie-card:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/* Same image size for all movies */
+
+.movie-card img{
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+}
+
+
+/* Movie title */
+
+.movie-card h3{
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    padding:0 10px;
+
+}
+
+
+/* Movie year */
+
+.movie-card p{
+
+    color:lightgray;
+
+    margin:10px 0;
+
+}
+
+
+/* Remove button */
+
+.remove-btn{
+
+    margin:15px;
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:red;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:0.3s;
+
+}
+
+
+.remove-btn:hover{
+
+    background:darkred;
+
+}
+
+
+
+
+
+
